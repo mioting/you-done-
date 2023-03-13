@@ -1,0 +1,139 @@
+body {
+    margin: 0;
+    background-color: #f9f7f0;
+    font-family: 'Roboto', sans-serif;
+    color: #2d3e4e;
+  }
+  
+    .bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 16px;
+      background-color: #8cbdb9;
+  
+  }
+  
+  .leftBar {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+  }
+  
+  .leftBar > i {
+      font-size: 30px;
+      padding: 0px 8px;
+  }
+  
+  .leftBar > h2 {
+      margin: 0;
+  }
+  
+  .rightBar {
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+    justify-content: space-evenly;
+}
+  
+  
+  .mainTable {
+    background-color: #f9f7f0;
+    margin: 30px 7%;   
+   
+  }
+
+  .bottomBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .leftColumn  {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 90vh;
+  }
+  
+  .leftBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 20px;
+  }
+
+  .leftColumn > div {
+    width: 100%;
+    height: 30%;
+    border: 1px solid #bbb;
+    border-radius: 12px;
+    margin-bottom: 10px;
+  }
+
+  .rightColumn {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    height: 90vh;
+  }
+
+  .rightColumn >div {
+    width: 100%;
+    height: 45%;
+    border: 1px solid #bbb;
+    border-radius: 12px;
+    
+  }
+
+  .firstChart {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .secondChart {
+    display: flex;
+    justify-content: center;
+    
+  }
+
+  a {
+    text-decoration: none;
+    color: #2d3e4e;
+}
+
+a:hover {
+    color: #293b4c;
+}
+
+.headtext {
+  color: #2d3e4e;
+}
+
+@media screen and (max-width: 580px) {
+  .rightBar {
+    width: 50%;
+    justify-content: flex-start;
+  }
+
+  .rightBar > a {
+    margin-left: 10px;
+  }
+  
+
+  .mainTable{
+    margin: 10px;
+  }
+  .bottomBox {
+    display: flex;
+    flex-direction: column;
+  }
+  .leftColumn, .rightColumn{
+    width: 95%;
+  }
+
+}

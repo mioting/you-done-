@@ -1,0 +1,494 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #2d3e4e;
+}
+
+.bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;  
+    box-shadow: 1px 3px #ddd;
+    background-color: #8cbdb9;
+
+}
+
+.leftBar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.leftBar>i {
+    font-size: 30px;
+    padding: 0px 8px;
+}
+
+.leftBar>h2 {
+    margin: 0;
+}
+
+.rightBar {
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+    justify-content: space-evenly;
+}
+
+.mainTable {
+    background-color: #f9f7f0;
+    display: flex;
+    flex-direction: row;
+}
+
+.leftBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 12%;
+    height: 100vh;
+    border-right: 1px solid grey;
+    background-color: #f9f7f0;
+
+
+}
+
+.leftBox button {
+    /* background-color:#0085ff; */
+    border-radius: 4px;
+}
+
+.logInmessage {
+    padding: 8px 0px;
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+}
+
+.leftBox>div {
+    margin: 10px 0px;
+}
+
+.projectButtonBar {
+    display: flex;
+    flex-direction: column;
+}
+
+.rightBox {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 100vh;
+}
+
+.projectButtonBar {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 16px;
+}
+
+.firstBarRow {
+    margin-bottom: 10px;
+}
+
+#prjUser {
+    display: flex;
+    flex-direction: row;
+}
+
+.projectButtonBar>button {
+    margin: 0px 3px;
+}
+
+.featureBar {
+    padding: 8px 0px;
+    border-bottom: 1px solid#ccc;
+}
+
+.featureBar>span {
+    padding: 0px 16px;
+}
+
+.buttonBar {
+    padding: 8px 16px;
+
+}
+
+.subTaskButton {
+    margin-top: 10px;
+}
+
+.buttonBar>button {
+    border-radius: 8px;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 90%;
+    margin: 16px;
+    border-radius: 8px;
+    box-shadow: 0 0 0 1px #ccc;
+}
+
+td,
+th {
+    border: 1px solid #ccc;
+    text-align: left;
+    padding: 8px;
+}
+
+/* #subTask {
+    margin-left: 50px;
+    width: 85%;
+} */
+
+.iconHead {
+    background-color: #8cbdb9;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    text-align: center;
+    border: solid #ccc 1px;
+}
+
+.clickPrj {
+    cursor: default;
+}
+
+.clickTask {
+    cursor: default;
+}
+
+.clickSubtask {
+    cursor: default;
+}
+
+
+.offcanvas {
+    --bs-offcanvas-width:600px;
+    flex-direction: row;
+    }
+    
+    /* .uploadPlace {
+    
+    border: 1px solid black;
+    padding: 5px;
+    justify-content: space-between;
+    height: 600px;
+    } */
+    
+    .offcanvas-body {
+    display: flex;
+    border: 1px solid black;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #f9f7f0;
+    }
+    #drop_zone {
+    /* border: 1px solid rgb(154, 243, 189); */
+    background-color: #f9f7f0;
+    width: 100%;
+    height: auto;
+    }
+    
+    #allContent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 80%;
+    }
+    #allContentTwo {
+    display: flex;
+    width: 100%;
+    height: 20%;
+    }
+    
+    #content-container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    }
+    .offcanvas-header {
+    flex-direction: row-reverse;
+    background-color: #8cbdb9;
+    }
+    
+    #commentArea {
+    border: 1px solid black;
+    width: 200px;
+    height: 200px;
+    }
+    
+    .sidenav {
+    height: 100%;
+    width: 50px;
+    /* position:absolute; */
+    /* z-index: 1; */
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+    }
+    
+    .sidenav a {
+    padding: 6px 6px 6px 10px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    }
+    
+    .sidenav a:hover {
+    color: #f1f1f1;
+    }
+    
+    /*
+    @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+    } */
+    #commentBoard {
+    border: 1px solid black;
+    width: 300px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    }
+    .commentArea {
+    border: 1px solid black;
+    display: flex;
+    flex-direction:column;
+    height: 85%;
+    }
+    .commentBox {
+    display: flex;
+    border: 1px solid black;
+    height: auto;
+    flex-direction: column;
+    }
+    #postDetail {
+    display: flex;
+    justify-content: space-between;
+    }
+    
+    /* .textArea {
+    border: 1px solid black;
+    width: 70%;
+    margin: auto;
+    }
+    .sendSign {
+    border: 1px solid black;
+    width: 10%;
+    margin: auto;
+    } */
+    #form-message {
+    border: 1px solid;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    background-color: #f9f7f0;
+    }
+    /* .fileInputBtn{
+    
+    cursor: pointer;
+    margin-right: 5px;
+    } */
+    #message {
+    height: 60%;
+    width: 100%;
+    border-radius: 10px;
+    }
+    .sendSign {
+    cursor: pointer;
+    margin-left: 5px;
+    }
+    /* #sendIcon {
+    height: 30px;
+    width: 30px;
+    }
+    #paperClipIcon {
+    height: 40px;
+    width: 40px;
+    } */
+
+#dllm {
+    display:none;
+}
+
+
+/* canvas scroll bar */
+.canvasScrollbar {
+    z-index: index -1;
+    overflow: auto;
+    transform: translate3d(0,0,0);;
+    }
+    
+    .canvasScrollbar::-webkit-scrollbar {
+    width: 5px;
+    height: 10px;
+    }
+    
+    /* Track */
+    .canvasScrollbar::-webkit-scrollbar-track {
+    background: black;
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+    }
+    
+    /* Handle */
+    .canvasScrollbar-webkit-scrollbar-thumb {
+    background: #be389d;
+    border-radius: 10px;
+    }
+    
+    /* Handle on hover */
+    .canvasScrollbar::-webkit-scrollbar-thumb:hover {
+    background: #be389d;
+    border-radius: 10px;
+    box-shadow: 0 0 1px #be389d, 0 0 2px #be389d, 0 0 6px #be389d, 0 0 12px #be389d, inset 0 0 1px #be389d, inset 0 0 2px #be389d, inset 0 0 6px #be389d, inset 0 0 12px #be389d;
+    }
+
+
+    a {
+        text-decoration: none;
+        color: pink;
+    }
+    a:hover{
+        color: pink;
+    }
+.sendOutBtn {
+    display: flex;
+    align-items: center;
+}
+a {
+    width: 50px;
+    height: 50px;
+}
+.commentImg {
+    width: 50px;
+    height: 50px;
+}
+.fileInputBtn {
+    font-family: sans-serif;
+    background-color: #8cbdb9;
+    color: #f9f7f0;
+    border: 1px solid black;
+    cursor: pointer;
+    padding: 2px;
+}
+#file-Chosen {
+    font-family: sans-serif;
+    margin-left: 5px;
+}
+.sendBtnLabel {
+    font-family: sans-serif;
+    background-color: #8cbdb9;
+    color: #f9f7f0;
+    border: 1px solid black;
+    cursor: pointer;
+    padding: 2px;
+}
+#postTime {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 3px;
+    font-size: 10px;
+}
+#postUser {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 3px;
+    font-size: 10px;
+}
+
+.btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #31525b;
+    --bs-btn-border-color: #31525b;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #49737e;
+    --bs-btn-hover-border-color: #52747d;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #253e45;
+    --bs-btn-active-border-color: #273d43;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #3a626c;
+    --bs-btn-disabled-border-color: #3a626c;
+}
+
+.btn-success {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #748b6f;
+    --bs-btn-border-color: #748b6f;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #899885;
+    --bs-btn-hover-border-color: #889584;
+    --bs-btn-focus-shadow-rgb: 60,153,110;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #677d62;
+    --bs-btn-active-border-color: #13653f;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #7c9676;
+    --bs-btn-disabled-border-color: #7c9676;
+}
+
+.btn-info {
+    --bs-btn-color: #2d3e4e;
+    --bs-btn-bg: #b3dee5;
+    --bs-btn-border-color: #b3dee5;
+    --bs-btn-hover-color: #2d3e4e;
+    --bs-btn-hover-bg: #bce7ee;
+    --bs-btn-hover-border-color: #c0ebf1;
+    --bs-btn-focus-shadow-rgb: 11,172,204;
+    --bs-btn-active-color: #2d3e4e;
+    --bs-btn-active-bg: #a7d1d7;
+    --bs-btn-active-border-color: #abd5db;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #2d3e4e;
+    --bs-btn-disabled-bg: #a8d9e1;
+    --bs-btn-disabled-border-color: #a8d9e1;
+}
+
+.headtext {
+    color: #2d3e4e;
+  }
+
+  a {
+    text-decoration: none;
+    color: #2d3e4e;
+}
+
+a:hover {
+    color: #293b4c;
+}
+
+@media screen and (max-width: 580px) {
+    .rightBar {
+        width: 50%;
+        justify-content: flex-start;
+      }
+    
+      .rightBar > a ,.headtext {
+        margin-left: 10px;
+      }
+
+    .leftBox{
+        width: 20%;
+    }
+
+    .taskButtonBar , .subTaskButton{
+        display: flex;
+        
+    }
+}

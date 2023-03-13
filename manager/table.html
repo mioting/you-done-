@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <!-- CSS only -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/list.css">
+</head>
+
+<body>
+    <div id="container">
+        <!-- navbar -->
+        <div class="bar">
+            <div class="leftBar">
+                <i class="bi bi-envelope-check"></i>
+                <h2>You Done?</h2>
+            </div>
+            <div class="rightBar">
+                <a href="/manager/dashboard.html">DashBoard</a>
+                <div class="headtext">Table</div>
+                <a href="/logout" class="logout">Logout</a>
+            </div>
+        </div>
+
+        <!--maintable-->
+        <div class="mainTable">
+
+            <!--left area-->
+            <div class="leftBox">
+                <div class="logInmessage">
+                    Hello!<br>
+                    <div class="userName"></div>
+                    
+                </div>
+
+
+                <!--Create New Project-->
+                <div class="addPrj">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#newProject">
+                        + Add
+                    </button>
+                    <!-- Modal -->
+
+                    <div class="modal fade" id="newProject" tabindex="-1" aria-labelledby="newProject"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="newProject">Add New Project</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="form-project">
+                                        <label for="prjName">Project Name</label><br>
+                                        <input type="text" id="prjname" name="name"><br>
+                                        <label for="startDate">Start Date</label><br>
+                                        <input type="date" id="startdate" name="start_date"><br>
+                                        <label for="startDate">End Date</label><br>
+                                        <input type="date" id="enddate" name="deadline">
+                                        <p><input type="submit" value="Submit"></p>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project"></div>
+
+            </div>
+
+            <!--right area-->
+            <div class="rightBox">
+
+                <div class="projectButtonBar">
+                    <div class="firstBarRow">
+                        <!--Loading Project INFO-->
+                        <div id="prjName"></div>
+                        <div id="prjUser"></div>
+                    </div>
+
+                    <div class="secondBarRow">
+
+                        <!--Project Related Button Bar-->
+                        <!--Add New Members-->
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#addMembers">
+                            Add members
+                        </button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="addMembers" tabindex="-1" aria-labelledby="addMembers"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Members</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form id="assignPjt">
+                                            <label for="users">User Name</label><br>
+                                            <select name="users" id="selectUsers"></select>
+                                            <p><input type="submit" value="Submit"></p>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!--Edit Project-->
+                        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#editProject">
+                            Edit
+                        </button>
+                        <!-- Modal -->
+
+                        <div class="modal fade" id="editProject" tabindex="-1" aria-labelledby="editProject"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="editProject">Edit Project</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form id="projectedit">
+                                            <label for="prjName">Project Name</label><br>
+                                            <input type="text" id="prjname" name="name"><br>
+                                            <label for="startDate">Start Date</label><br>
+                                            <input type="date" id="startdate" name="start_date"><br>
+                                            <label for="startDate">End Date</label><br>
+                                            <input type="date" id="enddate" name="deadline">
+                                            <p><input type="submit" value="Submit"></p>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Delete Project-->
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                            data-bs-target="#delete">Delete</button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="delete" tabindex="-1" aria-labelledby="delete" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="delete">Delete Project</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Are you Sure?
+                                    </div>
+                                    <form id="deletepjt">
+                                        <input type="checkbox" id="com" name="completebox">
+                                        <input type="submit" value="Yes">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="buttonBar">
+                    <div class="taskButtonBar">
+
+                        <!--Task Related Button Bar-->
+                        <!--Create New Task<-->
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                            data-bs-target="#newTaskModal" data-bs-whatever="@mdo">New Task</button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="newTaskModal" tabindex="-1" aria-labelledby="newTaskModal"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Create New Task</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form id="form-task">
+                                            <label for="taskName">Task Name</label><br>
+                                            <input type="text" id="taskName" name="name"><br>
+                                            <label for="description">Description</label><br>
+                                            <input type="text" id="description" name="description"><br>
+                                            <label for="startDate">Start Date</label><br>
+                                            <input type="date" id="startDate" name="start_date"><br>
+                                            <label for="deadline">End Date</label><br>
+                                            <input type="date" id="deadline" name="deadline"><br>
+                                            <p><input type="submit" value="Submit"></p>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!--Edit Task-->
+                        <!-- Button trigger modal -->
+                        <button id="try" type="button" class="btn btn-success" data-bs-toggle="modal"
+                            data-bs-target="#editTask" data-bs-whatever="@mdo">Edit Task</button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="editTask" tabindex="-1" aria-labelledby="editTask"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Task</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form id="form-edit-task">
+
+                                            <label for="edit">Task Name</label><br>
+                                            <input type="text" name="taskName" id="editTasks"></select><br>
+
+                                            <label for="edit">Task Status</label><br>
+                                            <select name="status" id="editTasksStatus">
+                                                <option value=></option>
+                                                <option value="Working on it">Working on it</option>
+                                                <option value="Not yet started">Not yet started</option>
+                                                <option value="Done">Done</option>
+                                            </select><br>
+                                            <label for="description">Description</label><br>
+
+                                            <input type="text" id="description" name="description"><br>
+                                            <label for="startDate">Start Date</label><br>
+                                            <input type="date" id="startDate" name="start_date"><br>
+                                            <label for="deadline">End Date</label><br>
+                                            <input type="date" id="deadline" name="deadline"><br>
+                                            <p><input type="submit" data-dismiss="editTask" value="Submit"></p>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Assign Task-->
+                        <button type="button" id="loadTUsers" class="btn btn-success" data-bs-toggle="modal"
+                            data-bs-target="#assignTask">
+                            Assign Task
+                        </button>
+
+                        <div class="modal fade" id="assignTask" tabindex="-1" aria-labelledby="assignTask"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Assign Task</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form id="assignTask">
+                                            <label for="users">User Name</label><br>
+                                            <select name="users" id="selectTUsers"></select>
+                                            <p><input type="submit" value="Submit"></p>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!--Delete Task-->
+                        <!-- Button trigger modal -->
+                        <button type="button" id="try2" class="btn btn-success" data-bs-toggle="modal"
+                            data-bs-target="#deleteTask" data-bs-whatever="@mdo">Delete Task</button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="deleteTask" tabindex="-1" aria-labelledby="deleteTask"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Task</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form id="deletetasksss">
+                                            
+                                            <p><input type="submit" value="Submit"></p>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Sub Task Related Button Bar-->
+                    <div class="subTaskButton">
+                        <!--Create Sub Task-->
+                        <button type="button" id="newsubTasksss" class="btn btn-success" data-bs-toggle="modal"
+                            data-bs-target="#newsubTask" data-bs-whatever="@mdo">New SUBTask</button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="newsubTask" tabindex="-1" aria-labelledby="newsubTask"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Create New SUBTask</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form id="form-subtask">
+                                            <label for="taskName">Task Name</label><br>
+                                            <input type="text" id="taskName" name="name"><br>
+                                            <label for="taskName">Assign</label><br>
+                                            <select name="users" id="selectSUsers"></select>
+                                            <label for="description">Description</label><br>
+                                            <input type="text" id="description" name="description"><br>
+                                            <p><input type="submit" value="Submit"></p>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Edit Sub Task-->
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                            data-bs-target="#editsubTask" data-bs-whatever="@mdo">Edit SUBTask</button>
+                        <div class="modal fade" id="editsubTask" tabindex="-1" aria-labelledby="editsubTask"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">EDIT SUBTask</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form id="form-editsubtask">
+                                            <label for="taskName">SUB Name</label><br>
+                                            <input type="text" id="taskName" name="name"><br>
+                                            <label for="edit">SubTask Status</label><br>
+                                            <select name="status" id="editsubTasksStatus">
+                                                <option value=></option>
+                                                <option value="Working on it">Working on it</option>
+                                                <option value="Not yet started">Not yet started</option>
+                                                <option value="Done">Done</option>
+                                            </select><br>
+                                            <label for="description">Description</label><br>
+                                            <input type="text" id="description" name="description"><br>
+                                            <p><input type="submit" value="Submit"></p>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Delete Sub Task-->
+                        <button type="button" id="try2" class="btn btn-success" data-bs-toggle="modal"
+                            data-bs-target="#deletesubTask" data-bs-whatever="@mdo">Delete SUBTask</button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="deletesubTask" tabindex="-1" aria-labelledby="deletesubTask"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Sub Task</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form id="deletesubTasks">
+                                            
+                                            <p><input type="submit" value="Submit"></p>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" id="dllm" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+                    D&C
+                </button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasScrolling"
+                    aria-labelledby="offcanvasScrollingLabel">
+                    <div class="sidenav">
+                        <a href="#"><i class="bi bi-list-task"></i></a>
+                        <a href="#"><i class="bi bi-send-check"></i></a>
+                        <!-- <a href="#"><i class="bi bi-chat-dots"></i></a>
+      <a href="#"><i class="bi bi-calendar-check"></i></a> -->
+                    </div>
+                    <div id="content-container">
+                        <div class="offcanvas-header">
+                            <!-- <h5 class="offcanvas-title" id="offcanvasScrollingLabel">
+          Offcanvas with body scrolling
+        </h5> -->
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <div id="allContent" class="canvasScrollbar">
+                            </div>
+                            <div id="allContentTwo">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--task table-->
+                <table id="tablet">
+
+                </table>
+                <!-- <div id="subTask"></div> -->
+                <table id="tables">
+
+                </table>
+
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./js/list.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datejs/1.0/date.min.js"
+        integrity="sha512-/n/dTQBO8lHzqqgAQvy0ukBQ0qLmGzxKhn8xKrz4cn7XJkZzy+fAtzjnOQd5w55h4k1kUC+8oIe6WmrGUYwODA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+
+</html>
